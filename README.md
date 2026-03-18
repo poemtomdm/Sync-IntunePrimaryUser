@@ -21,10 +21,9 @@
 ## 💡 Why This Exists
  
 In Microsoft Intune, the **Primary User** of a device drives several critical policies and experiences:
- 
-- **User-targeted app deployments** — apps assigned to users only deploy if that user is set as Primary User
-- **Conditional Access** — user-device affinity checks rely on this assignment
-- **Company Portal** — the Primary User is shown ownership of the device
+
+- **Company Portal** — the Primary User is shown ownership of the device. It cannot not be leveraged by other users.
+- **Bitlocker recovery** — only the Primary User (and admin) is capable to retrieve the bitlocker key from it's own workplace
 - **License reporting** — some license models count per Primary User
  
 The problem is that **Intune does not automatically update the Primary User** when a device is handed off to a different employee, re-imaged, or shared. Over time, devices accumulate **stale Primary User assignments** that break app targeting and reporting.
